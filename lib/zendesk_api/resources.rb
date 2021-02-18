@@ -1038,6 +1038,14 @@ module ZendeskAPI
       def new_record?
         false
       end
+
+      def self.list(client)
+        ZendeskAPI::Collection.new(
+          client,
+          self,
+          :path => "nps/surveys.json"
+        )
+      end
     end
   end
 end
